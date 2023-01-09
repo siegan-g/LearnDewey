@@ -1,0 +1,142 @@
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.home-title{
+    padding-top:5%;
+    width:390px;
+    text-align: center;
+}
+
+.center{
+    margin:auto;
+}
+.right{
+    margin-left:auto;
+}
+.title{
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+}
+.h1{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+
+.h5{
+    color:#72E236;
+    font-weight: bold;
+}
+.p{
+    color: #FFFFFF;
+    font-size: larger;
+}
+.spacer-lg{
+    padding: 10%;
+}
+.page-bg{
+    background: #3672E2;
+}
+.my-btn-secondary {
+background-color: transparent;
+border-radius: 5px;
+border-color: #EA4C89;
+border-width: 2px;
+box-sizing: border-box;
+color:#FFFFFF;
+display: inline-block;
+height: 40px;
+line-height: 20px;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  touch-action: manipulation;
+}
+.my-btn-secondary:focus,.my-btn-secondary:hover {
+    border-color: #F082AC;
+}
+.my-btn-primary {
+  background-color: #EA4C89;
+  border-radius: 5px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  touch-action: manipulation;
+}
+
+.my-btn-primary:hover,
+.my-btn-primary:focus {
+  background-color: #F082AC;
+}
+
+.grid-container{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+}
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth) {
+        display: none;
+    }
+    .grid-container{
+        row-gap: 20px;
+        grid-auto-flow: row;
+    }
+    .right{
+        margin: auto;
+    }
+    .top-row.auth {
+        justify-content: space-between;
+    }
+
+    .top-row a, .top-row .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row, article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}

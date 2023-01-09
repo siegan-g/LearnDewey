@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "XnUlugxvFv0rgV46/kuReqOj/2UbBPUij5pXp6Hl3EgAeuegE1TaxssqdKGvMIybDoctTuUGpqTm7EmKEC/d9g==",
+  "success": true,
+  "projectFilePath": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj",
+  "expectedPackageFiles": [
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.authorization/6.0.8/microsoft.aspnetcore.authorization.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.components/6.0.8/microsoft.aspnetcore.components.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.components.analyzers/6.0.8/microsoft.aspnetcore.components.analyzers.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.components.forms/6.0.8/microsoft.aspnetcore.components.forms.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.components.web/6.0.8/microsoft.aspnetcore.components.web.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.metadata/6.0.8/microsoft.aspnetcore.metadata.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.0/microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.1/microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.jsinterop/6.0.8/microsoft.jsinterop.6.0.8.nupkg.sha512",
+    "/home/jinji/.nuget/packages/mudblazor/6.0.15/mudblazor.6.0.15.nupkg.sha512",
+    "/home/jinji/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
+    "/home/jinji/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.11/microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,59 @@
+﻿@inject NavigationManager NavigationManager;
+@page "/play"
+
+    <body>
+        <main class="page page-bg">
+            <div class="align"> 
+                <h5>
+                    Play
+                </h5>
+               <h1>
+                   Let's Begin
+               </h1> 
+               <p>
+                   Choose one of the following game modes
+               </p>
+            </div>
+            <div class="center grid-container">
+                <div @onclick="NavigateToReplace" class="game-mode-card grid-item yellow ">
+                    <img src="assets/giphy6.gif"/>
+                    <div class=game-mode-container>
+                        <h3 class="center">Replacing Books</h3>
+                    </div>
+                </div>
+                <div @onclick="NavigateToIdentifyAreas" class="game-mode-card grid-item blue">
+                    <img src="assets/giphy2.gif"/>
+                    <div class="game-mode-container">
+                        <h3 class="center">
+                            Identifying Areas
+                        </h3>
+                    </div>
+                </div>
+                <div @onclick="NavigateToFindingCallNumbers" class="game-mode-card grid-item brown">
+                    <img src="assets/giphy8.gif"/>
+                    <div class="game-mode-container">
+                        <h3 class="center">
+                            Finding Call Numbers
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="page page-bg"style="height:340px">
+        </div>
+    </body>
+@code{
+    public void NavigateToReplace()
+    {
+        NavigationManager.NavigateTo("/play/replace");
+    }
+    public void NavigateToIdentifyAreas()
+    {
+        NavigationManager.NavigateTo("/play/areas");
+    }
+    public void NavigateToFindingCallNumbers()
+    {
+        NavigationManager.NavigateTo("/play/numbers");
+    }
+    
+}

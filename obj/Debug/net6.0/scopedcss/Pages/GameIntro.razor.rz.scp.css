@@ -1,0 +1,110 @@
+
+
+.page[b-5zexpc2gw1] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left:12%;
+    padding-right:12%;
+}
+
+.page-bg[b-5zexpc2gw1]{
+    background-color: #26335D;
+}
+.grid-container[b-5zexpc2gw1]{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+}
+.grid-item[b-5zexpc2gw1]{
+    width:250px;
+    height:350px;
+}
+img[b-5zexpc2gw1]{
+    width:250px;
+    height: auto; 
+}
+.yellow[b-5zexpc2gw1]{
+    background: #FEC95F ;
+}
+.yellow:hover[b-5zexpc2gw1],.yellow:focus[b-5zexpc2gw1]{
+    background: #f3e0bb;
+    cursor:grab;
+}
+.blue[b-5zexpc2gw1]{
+    background: #73ABBC;
+}
+.blue:hover[b-5zexpc2gw1],.blue:focus[b-5zexpc2gw1]{
+    background: #b1ced7;
+    cursor:grab;
+}
+.brown[b-5zexpc2gw1]{
+    background: #968374;
+}
+.brown:hover[b-5zexpc2gw1],.brown:focus[b-5zexpc2gw1]{
+    background: #e6d6c9;
+    cursor:grab;
+}
+/*https://www.w3schools.com/howto/howto_css_cards.asp*/
+.game-mode-card[b-5zexpc2gw1]{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover[b-5zexpc2gw1] {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.game-mode-container[b-5zexpc2gw1]{
+  padding: 2px 16px;
+}
+.right[b-5zexpc2gw1]{
+    margin-left:auto
+}
+.align[b-5zexpc2gw1]{
+    padding-top:5%;
+    padding-left: 12%;
+    padding-right: 12%;
+    text-align: center;
+}
+
+.text-left[b-5zexpc2gw1]{
+    padding: 5%;
+    text-align: left;
+}
+
+.title[b-5zexpc2gw1]{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+}
+.center[b-5zexpc2gw1]{
+    margin:auto;
+    text-align: center;
+}
+h1[b-5zexpc2gw1]{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+h3[b-5zexpc2gw1]{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h5[b-5zexpc2gw1]{
+    color:#72E236;
+    font-weight: bold;
+}
+p[b-5zexpc2gw1]{
+    color:#FFFFFF;
+}
+
+
+@media (max-width: 940.98px) {
+    .grid-container[b-5zexpc2gw1]{
+        row-gap: 50px;
+        grid-auto-flow: row;
+    }
+    .right[b-5zexpc2gw1]{
+        margin: auto;
+    }
+}

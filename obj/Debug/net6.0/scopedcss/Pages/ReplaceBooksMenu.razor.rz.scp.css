@@ -1,0 +1,128 @@
+.page[b-p4uvxt2qoi] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left:12%;
+    padding-right:12%;
+}
+
+.page-bg[b-p4uvxt2qoi]{
+    background-color: #26335D;
+}
+.grid-container[b-p4uvxt2qoi]{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+}
+.grid-item[b-p4uvxt2qoi]{
+    width:250px;
+    height:350px;
+}
+img[b-p4uvxt2qoi]{
+    width:250px;
+    height: auto; 
+}
+.yellow[b-p4uvxt2qoi]{
+    background: #FEC95F ;
+}
+.yellow:hover[b-p4uvxt2qoi],.yellow:focus[b-p4uvxt2qoi]{
+    background: #f3e0bb;
+    cursor:grab;
+}
+.blue[b-p4uvxt2qoi]{
+    background: #73ABBC;
+}
+.blue:hover[b-p4uvxt2qoi],.blue:focus[b-p4uvxt2qoi]{
+    background: #b8dde9;
+    cursor:grab;
+}
+.brown[b-p4uvxt2qoi]{
+    background: #968374;
+}
+
+.brown:hover[b-p4uvxt2qoi],.brown:focus[b-p4uvxt2qoi]{
+    background: #f7e3d4;
+    cursor:grab;
+}
+/*https://www.w3schools.com/howto/howto_css_cards.asp*/
+.game-mode-card[b-p4uvxt2qoi]{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover[b-p4uvxt2qoi] {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.game-mode-container[b-p4uvxt2qoi]{
+  padding: 2px 16px;
+}
+.right[b-p4uvxt2qoi]{
+    margin-left:auto
+}
+.align[b-p4uvxt2qoi]{
+    padding-top:5%;
+    padding-left: 12%;
+    padding-right: 12%;
+    text-align: center;
+}
+
+.text-left[b-p4uvxt2qoi]{
+    padding: 5%;
+    text-align: left;
+}
+
+.title[b-p4uvxt2qoi]{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+}
+.center[b-p4uvxt2qoi]{
+    margin:auto;
+    text-align: center;
+}
+h1[b-p4uvxt2qoi]{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+h3[b-p4uvxt2qoi]{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h5[b-p4uvxt2qoi]{
+    color:#72E236;
+    font-weight: bold;
+}
+p[b-p4uvxt2qoi]{
+    color:#FFFFFF;
+}
+
+.fadein-first[b-p4uvxt2qoi] {
+    animation: fadein-b-p4uvxt2qoi 0.2s linear;
+}
+
+.fadein-second[b-p4uvxt2qoi] { 
+
+    animation: fadein-b-p4uvxt2qoi 1.0s linear;
+}
+
+.fadein-last[b-p4uvxt2qoi] { 
+
+    animation: fadein-b-p4uvxt2qoi 1.5s linear;
+}
+
+/* Animations to fade the snackbar in and out */
+@keyframes fadein-b-p4uvxt2qoi {
+    from {opacity: 0}
+  to { opacity: 1;}
+}
+
+@media (max-width: 940.98px) {
+    .grid-container[b-p4uvxt2qoi]{
+        row-gap: 50px;
+        grid-auto-flow: row;
+    }
+    .right[b-p4uvxt2qoi]{
+        margin: auto;
+    }
+}

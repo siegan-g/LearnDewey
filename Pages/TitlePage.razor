@@ -1,0 +1,46 @@
+
+
+@inject NavigationManager NavigationManager
+<div class="page-bg" style="padding:10%">
+    <div class="container-flex">
+        <h5 class="h5 d-flex  justify-content-center">
+            Can't Find Your Favourite Books? 
+        </h5>
+        <h5 class="h5 d-flex  justify-content-center">
+            Nevermore!
+        </h5>
+    </div>
+    <div  class="center home-title">
+        <main class="page-bg container-flex">
+            <h1 class="title d-flex justify-content-center">
+                Learn How The Dewey Decimal System Works
+            </h1>
+            <p class="p d-flex justify-content-center">
+                Become a master of your library
+            </p>
+        </main>
+    </div>
+    <div class="center justify-content-center grid-container">
+        <div>
+            <button @onclick="NavigateTo" class="p my-btn-primary grid-item" style="width:200px; height:80px">
+                <span>Let's Go</span>
+            </button>
+        </div>
+        <div>
+            <button class="p my-btn-secondary grid-item" style="width:200px; height:80px">
+                <span>Read More↴</span>
+            </button>
+        </div>
+    </div>
+    <div class="d-flex" >
+        <img class="right" src="assets/giphy4.gif" alt="MISSING GIF" width="250" height="250"/>
+    </div>
+</div>
+
+@code{
+
+    public void NavigateTo()
+    {
+        NavigationManager.NavigateTo("play");
+    }
+}

@@ -1,0 +1,108 @@
+
+.page[b-oi3wtobku9] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left:12%;
+    padding-right:12%;
+}
+
+.page-bg[b-oi3wtobku9]{
+    background-color: #26335D;
+}
+
+.page-notification[b-oi3wtobku9]{
+    padding-top: 50px;
+    position: relative;
+    margin: auto;
+    height:fit-content;
+    width: fit-content;
+
+}
+
+.timer[b-oi3wtobku9]{
+    padding-top:50px;
+    width:170px;
+    height:100px;
+
+}
+.grid-container[b-oi3wtobku9]{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+}
+.grid-item[b-oi3wtobku9]{
+    width:250px;
+    height:350px;
+}
+img[b-oi3wtobku9]{
+    width:auto;
+    height: auto; 
+}
+
+.my-btn-secondary[b-oi3wtobku9] {
+background-color: #F082AC;
+border: 2px solid #EA4C89;
+border-radius: 100px;
+box-sizing: border-box;
+color:#FFFFFF;
+
+display: inline-block;
+width: 100px;
+height: 100px;
+line-height: 20px;
+  line-height: 20px;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  touch-action: manipulation;
+}
+.my-btn-secondary:focus[b-oi3wtobku9],.my-btn-secondary:hover[b-oi3wtobku9] {
+    border-color: #F082AC;
+    background-color: #ffd0e2;
+}
+
+.my-btn-primary[b-oi3wtobku9] {
+  background-color: #EA4C89;
+  border-radius: 5px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin-top:20px;
+  margin-left:50%;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  touch-action: manipulation;
+}
+
+.my-btn-primary:hover[b-oi3wtobku9],
+.my-btn-primary:focus[b-oi3wtobku9] {
+  background-color: #F082AC;
+}
+.center[b-oi3wtobku9]{
+    margin-left:50%;
+    text-align: center;
+}
+.right[b-oi3wtobku9]{
+    margin-right:auto;
+    margin-left: auto;
+    transform: translateX(100%);
+}
+
+h1[b-oi3wtobku9]{
+    color:black;
+    font-weight: bold;
+}
+p[b-oi3wtobku9]{
+    font-size: medium;
+}

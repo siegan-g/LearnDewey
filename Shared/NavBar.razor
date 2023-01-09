@@ -1,0 +1,54 @@
+@inject NavigationManager NavigationManager
+<div>
+<nav class="navbar navbar-expand-lg primary">
+    <a class="navbar-brand nav-brand-text" href="">LearnDewey</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <button @onclick="NavigateTo" class="my-btn-primary nav-text">
+                    PLAY
+                </button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-text" >
+                    How It Works
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link nav-text">
+                    Contact
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav right" style="padding-right:20%" >
+            <li class="nav-item">
+                <a class="nav-text nav-link">
+                    Log In 
+                </a>
+            </li>
+            <li class="nav-item">
+                <button class="nav-text nav-link my-btn-primary" style="width:150px;">
+                    Sign Up ⟶ 
+                </button>
+            </li>
+        </ul>
+    </div>
+    </nav>
+</div>
+
+@code{
+    private bool isCollapsed = true;
+    private string? NavBarCollapseStatus => isCollapsed ? "collapse" : null;
+    public void NavCollapser()
+    {
+        isCollapsed = !isCollapsed;
+    }
+
+    public void NavigateTo()
+    {
+        NavigationManager.NavigateTo("play");
+    }
+}

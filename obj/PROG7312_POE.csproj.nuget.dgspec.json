@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj": {}
+  },
+  "projects": {
+    "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj",
+        "projectName": "PROG7312_POE",
+        "projectPath": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj",
+        "packagesPath": "/home/jinji/.nuget/packages/",
+        "outputPath": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jinji/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.111/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

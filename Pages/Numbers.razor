@@ -1,0 +1,127 @@
+@inject NavigationManager NavigationManager;
+ @using MudBlazor.Utilities
+ @using System.Timers;
+
+@page "/play/numbers";
+
+
+
+<body class="page-bg">
+   @if(showInstructions)
+    {
+    <div class=" page-notification">
+        <MudPaper Class="pa-16 ma-2" Elevation="3">
+            <h1>
+                How to Play:
+            </h1>
+            <p>
+            👉  You will quizzed on how well you know the different call numbers
+            </p>
+            <p>
+            👉  Select the most correct call number that follows
+            </p>
+            <p style="color:red">
+            👉   You are timed! So check the timer
+            </p>
+            <div>
+            <button @onclick="Start" class="my-btn-primary">
+                Start
+            </button>
+            </div>
+        </MudPaper>
+    </div>
+    }
+     @if(start) //if the user selects the start button
+        { 
+            <div class="timer center">
+            <MudCard Width="200" Height="100">
+                <MudCardContent>
+                <MudText>
+                    Time Left: @timerCount
+                </MudText>
+                </MudCardContent>
+            </MudCard>
+            </div>
+            <div>
+                <button @onclick="Finish" class="my-btn-primary" >
+                    Done
+                </button>
+            </div>
+
+           
+            @if(timerCount==0 || finish) // when they run out of time
+            {         
+                @Finish
+                <div class ="page-notification">
+                 <MudPaper Class="pa-16 ma-2" Elevation="3">
+                    <h1>    
+                        @finishMessage                
+                    </h1>
+                    <p>
+                    </p>                
+                    <button @onclick="Reset" class="my-btn-primary center">
+                        Reset
+                    </button>
+                </MudPaper>
+                </div>
+            }
+        }
+</body>
+
+@code
+{
+
+    bool showInstructions = true;
+    bool start = false;
+    bool finish = false;
+    bool win = false;
+    String visibility = "visibility:hidden;";
+   // bool win = false;
+     String finishMessage = "You lost";
+    int timerCount = 30;
+    // where 0 represents questions in column A and definitions in column B
+    int state = 0;
+    // Where in the case of mudblazor dropzones a row would the position on a drop item and column would be the selector/Identifier
+    int position = 4; 
+    int score = 0;
+    String identifier = "1";
+    public void Finish()
+    {
+        finish = true;
+    }
+    Timer timer;
+public void Timer()
+{
+      timer = new Timer(1000);
+      timerCount = 60;
+        // Lambdas are pretty cool :o 
+        timer.Elapsed += (sender,e) =>
+        {
+            timerCount--;
+            InvokeAsync(()=>{StateHasChanged();}); 
+            if(timerCount == 0)
+            {
+                timer.Stop();
+                timer.Dispose();        
+                finish = true;
+                timerCount = 60;
+            }
+        };
+        timer.Enabled =true;        
+}
+    public void Start()
+    {
+        start = true;
+        visibility = "visibility:visible";
+        showInstructions = false;
+        Timer();   
+        Reset();
+    }
+    private void Reset()
+    { 
+        Timer();
+        win = false;
+        finish = false;
+  
+    }
+}

@@ -1,0 +1,257 @@
+@using MudBlazor.Utilities
+@using System.Timers;
+@page "/play/areas"
+
+
+
+<body class="page-bg">
+    @*
+    Creating the container first as to not get a null pointer exception when calling start
+    *@
+      <div class="d-flex flex-column mud-width-full mud-height-full align" style=@visibility>
+            <MudDropContainer  T="DropItem" Items="@dropzoneItems" @ref="_container" ItemsSelector="@((item,dropzone) => item.Selector == dropzone)" ItemDropped="ItemUpdated" Class="d-flex flex-wrap flex-grow-1">
+            <ChildContent>
+                    <MudPaper Class="ma-4 flex-grow-1">
+                        <MudList Clickable="true" Class="d-flex flex-column mud-height-full">
+                            <MudListSubheader>Column A</MudListSubheader>
+                            <MudDropZone T="DropItem" CanDrop="@((item) => false)" Identifier="1" Class="flex-grow-1" AllowReorder="true" />
+                        </MudList>
+                    </MudPaper>
+                    <MudPaper Class="ma-4 flex-grow-1">
+                        <MudList Clickable="true" Class="d-flex flex-column mud-height-full">
+                            <MudListSubheader>Column B</MudListSubheader>
+                            <MudDropZone T="DropItem" Identifier="2" Class="flex-grow-1" AllowReorder="true" />
+                        </MudList>
+                    </MudPaper>
+                    <MudPaper Class="ma-4 flex-grow-1">
+                        <MudList Clickable="true" Class="d-flex flex-column mud-height-full">
+                            <MudListSubheader>Answers</MudListSubheader>
+                            <MudDropZone T="DropItem" Identifier="3" Class="flex-grow-1" AllowReorder="true" />
+                        </MudList>
+                    </MudPaper>
+            </ChildContent>
+            <ItemRenderer>
+                <MudListItem Text="@($"{context.Text} ")" />
+            </ItemRenderer>
+        </MudDropContainer>
+    </div>
+    @if(showInstructions)
+    {
+    <div class=" page-notification">
+        <MudPaper Class="pa-16 ma-2" Elevation="3">
+            <h1>
+                How to Play:
+            </h1>
+            <p>
+            👉  You will be given three columns: Questions, Definitions and Answers. 
+            </p>
+            <p>
+            👉  Match the Questions to the correct definitions by dropping the definitions in the answers column
+            </p>
+            <p style="color:red">
+            👉   You are timed! So check the timer
+            </p>
+            <div>
+            <button @onclick="Start" class="my-btn-primary">
+                Start
+            </button>
+            </div>
+
+        </MudPaper>
+    </div>
+    
+
+    }
+    @if(start) //if the user selects the start button
+        { 
+            <div class="timer center">
+            <MudCard Width="200" Height="100">
+                <MudCardContent>
+                <MudText>
+                    Time Left: @timerCount
+                </MudText>
+                </MudCardContent>
+            </MudCard>
+            </div>
+            <div>
+                <button @onclick="Finish" class="my-btn-primary" >
+                    Done
+                </button>
+            </div>
+
+           
+            @if(timerCount==0 || finish) // when they run out of time
+            {         
+                @Finish
+                <div class ="page-notification">
+                 <MudPaper Class="pa-16 ma-2" Elevation="3">
+                    <h1>    
+                        @finishMessage                
+                    </h1>
+                    <p>
+                    </p>                
+                    <button @onclick="Reset" class="my-btn-primary center">
+                        Reset
+                    </button>
+                </MudPaper>
+                </div>
+            }
+        }
+</body>
+
+@code{
+    
+    bool showInstructions = true;
+    bool start = false;
+    bool finish = false;
+    bool win = false;
+    String visibility = "visibility:hidden;";
+   // bool win = false;
+     String finishMessage = "You Scored: ";
+    int timerCount = 30;
+    // where 0 represents questions in column A and definitions in column B
+    int state = 0;
+    // Where in the case of mudblazor dropzones a row would the position on a drop item and column would be the selector/Identifier
+    int position = 4; 
+    int score = 0;
+    String identifier = "1";
+
+    public void State()
+    {
+    }
+    public void Finish()
+    {
+        finish = true;
+       List<String>Questions = new ();
+        List<String> Answers = new ();
+        foreach (var item in data)
+        {
+            //match column A/Identifier 1
+             Questions = data.Where(item=>item.Selector.Equals("1")).Select(item=>item.Text).ToList();
+             Answers = data.Where(item=>item.Selector.Equals("3")).Select(item=>item.Text).ToList();
+
+        }
+            score = id.Matcher(Questions,Answers);
+ 
+        finishMessage = $"You Scored: {score}/{position} ";
+    }
+
+Timer timer;
+public void Timer()
+{
+      timer = new Timer(1000);
+      timerCount = 60;
+        // Lambdas are pretty cool :o 
+        timer.Elapsed += (sender,e) =>
+        {
+            timerCount--;
+            InvokeAsync(()=>{StateHasChanged();}); 
+            if(timerCount == 0)
+            {
+                timer.Stop();
+                timer.Dispose();        
+                finish = true;
+                timerCount = 60;
+            }
+        };
+        timer.Enabled =true;        
+}
+    public void Start()
+    {
+        start = true;
+        visibility = "visibility:visible";
+        showInstructions = false;
+        Timer();   
+        Reset();
+    }
+
+  // The pre-build list component form MudBlazor 
+    private MudDropContainer<DropItem> _container; 
+    private void ItemUpdated(MudItemDropInfo<DropItem> dropItem)
+    {
+        dropItem.Item.Selector = dropItem.DropzoneIdentifier;
+        //had no idea a switch case could be written inline
+        // The drop item returns from 1 a
+        var indexOffset = dropItem.DropzoneIdentifier switch {
+            "3" => data.Count(x=>x.Selector=="2"),
+            "2" => data.Count(x=>x.Selector=="1"),
+            _=> 0,
+        };
+        //UpdateOrder comes from MudBlazor.Utilities
+        data.UpdateOrder(dropItem,item=>item.Position,indexOffset);
+        //do something later
+    }
+
+    //also didn't know you can reduce method boilerplate with this lambda like expression :o 
+   private void SaveData() => data = dropzoneItems;
+
+    //List to store the Droppable Items
+    //had no idea you can create an instance with just new(); 
+    private List<DropItem> dropzoneItems = new();
+        //List to store the server data that populates the drop zones
+    private List<DropItem> data = new();
+        // List to store the callNumbers so it may be sorted and compared later 
+    private IdentifyAreas id;
+
+    // Refresh the container, method is called under Reload
+    private void RefreshContainer()
+    {
+        //update bindings to container
+        StateHasChanged();
+        _container.Refresh();
+    }
+
+
+    // generate a new List of Items on Reload and refresh the container
+    private void Reset()
+    { 
+        Timer();
+        win = false;
+        finish = false;
+        dropzoneItems = new();
+        data = new();
+        id = new IdentifyAreas();
+        List<KeyValuePair<string,string>> Areas  = new List<KeyValuePair<string, string>>();
+            foreach(var item in id.GetAreas())
+            {
+                Areas.Add(item);
+            }
+    
+        if (state == 0)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                data.Add(new DropItem(){Text=Areas[i].Value,Selector="2",Position = i});
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                data.Add(new DropItem(){Text=Areas[i].Key,Selector="1",Position = i});
+            }                
+        }
+        else if(state ==1)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                data.Add(new DropItem(){Text=Areas[i].Key,Selector="2",Position = i});
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                data.Add(new DropItem(){Text=Areas[i].Value,Selector="1",Position = i});
+            }    
+
+        }
+
+        dropzoneItems = data;
+        RefreshContainer();
+    }
+
+    //Create a object of the droppable Item 
+    //https://mudblazor.com/components/dropzone#transfer-items-between-drop-zones-save-reorder-data
+    internal class DropItem{
+        // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/init
+        public String Text { get; init; }
+        public String Selector { get; set; }
+        public int Position { get; set; }
+    }
+
+}

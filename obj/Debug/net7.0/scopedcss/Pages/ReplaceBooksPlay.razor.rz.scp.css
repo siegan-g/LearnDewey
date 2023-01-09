@@ -1,0 +1,178 @@
+
+.page[b-zfxso173fa] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left:12%;
+    padding-right:12%;
+}
+
+.page-bg[b-zfxso173fa]{
+    background-color: #26335D;
+}
+.grid-container[b-zfxso173fa]{
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+}
+.grid-item[b-zfxso173fa]{
+    width:250px;
+    height:350px;
+}
+img[b-zfxso173fa]{
+    width:auto;
+    height: auto; 
+}
+
+.my-btn-secondary[b-zfxso173fa] {
+background-color: #F082AC;
+border: 2px solid #EA4C89;
+border-radius: 100px;
+box-sizing: border-box;
+color:#FFFFFF;
+
+display: inline-block;
+width: 100px;
+height: 100px;
+line-height: 20px;
+  line-height: 20px;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  touch-action: manipulation;
+}
+.my-btn-secondary:focus[b-zfxso173fa],.my-btn-secondary:hover[b-zfxso173fa] {
+    border-color: #F082AC;
+    background-color: #ffd0e2;
+}
+
+.my-btn-primary[b-zfxso173fa] {
+  background-color: #EA4C89;
+  border-radius: 5px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+  vertical-align: baseline;
+  touch-action: manipulation;
+}
+
+.my-btn-primary:hover[b-zfxso173fa],
+.my-btn-primary:focus[b-zfxso173fa] {
+  background-color: #F082AC;
+}
+.yellow[b-zfxso173fa]{
+    background: #FEC95F ;
+}
+.yellow:hover[b-zfxso173fa],.yellow:focus[b-zfxso173fa]{
+    background: #f3e0bb;
+    cursor:grab;
+}
+.blue[b-zfxso173fa]{
+    background: #73ABBC;
+}
+.blue:hover[b-zfxso173fa],.blue:focus[b-zfxso173fa]{
+    background: #b8dde9;
+    cursor:grab;
+}
+.brown[b-zfxso173fa]{
+    background: #968374;
+}
+
+.brown:hover[b-zfxso173fa],.brown:focus[b-zfxso173fa]{
+    background: #f7e3d4;
+    cursor:grab;
+}
+/*https://www.w3schools.com/howto/howto_css_cards.asp*/
+.game-mode-card[b-zfxso173fa]{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover[b-zfxso173fa] {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.game-mode-container[b-zfxso173fa]{
+  padding: 2px 16px;
+}
+.right[b-zfxso173fa]{
+    margin-left:auto
+}
+.align[b-zfxso173fa]{
+    padding-top:5%;
+    padding-left: 12%;
+    padding-right: 12%;
+    text-align: center;
+}
+
+.text-left[b-zfxso173fa]{
+    padding: 5%;
+    text-align: left;
+}
+
+.title[b-zfxso173fa]{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+}
+.center[b-zfxso173fa]{
+    margin:auto;
+    text-align: center;
+}
+h1[b-zfxso173fa]{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+h3[b-zfxso173fa]{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h5[b-zfxso173fa]{
+    color:#72E236;
+    font-weight: bold;
+}
+p[b-zfxso173fa]{
+    color:#FFFFFF;
+}
+
+.fadein-first[b-zfxso173fa] {
+    animation: fadein-b-zfxso173fa 0.2s linear;
+}
+
+.fadein-second[b-zfxso173fa] { 
+
+    animation: fadein-b-zfxso173fa 1.0s linear;
+}
+
+.fadein-last[b-zfxso173fa] { 
+
+    animation: fadein-b-zfxso173fa 1.5s linear;
+}
+
+/* Animations to fade the snackbar in and out */
+@keyframes fadein-b-zfxso173fa {
+    from {opacity: 0}
+  to { opacity: 1;}
+}
+
+@media (max-width: 940.98px) {
+    .grid-container[b-zfxso173fa]{
+        row-gap: 50px;
+        grid-auto-flow: row;
+    }
+    .right[b-zfxso173fa]{
+        margin: auto;
+    }
+}

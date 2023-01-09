@@ -1,0 +1,30 @@
+
+.page[b-tr30wpnqnz] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-bg[b-tr30wpnqnz]{
+    background-color: #26335D;
+}
+
+.home-info[b-tr30wpnqnz]{
+    padding-top:5%;
+    padding-left: 12%;
+    padding-right: 12%;
+    text-align: left;
+} .title[b-tr30wpnqnz]{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: bold;
+}
+h1[b-tr30wpnqnz]{
+    color:#FFFFFF;
+    font-weight: bold;
+}
+p[b-tr30wpnqnz]{
+    color:#72E236;
+    font-weight: bold;
+}

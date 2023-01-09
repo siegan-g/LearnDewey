@@ -1,0 +1,37 @@
+﻿@page "/play/replace"
+
+    <body>
+        <main class="page page-bg">
+            <div class="align"> 
+                <h5>
+                   Replacing Books 
+                </h5>
+               <h1>
+                   Choose Your Level 
+               </h1> 
+               <p>
+                   Instructions: Order the call numbers correctly to win!
+               </p>
+            </div>
+            <div class="center grid-container">
+                <a href="/play/replace/1" class="game-mode-card grid-item yellow fadein-first">
+                    <img src="assets/difficulty1.gif"/>
+                </a>
+                <a  href="/play/replace/2" class="game-mode-card grid-item blue fadein-second ">
+                    <img src="assets/difficulty2.gif"/>
+                </a>
+                <a href="/play/replace/3" class="game-mode-card grid-item brown">
+                    <img src="assets/difficulty3.gif"/>
+                </a>
+            </div>
+        </main>
+        <div class="page page-bg"style="height:340px">
+        </div>
+    </body>
+
+<div>
+  <ul ondragover="event.preventDefault();" ondrag000="event.dataTransfer.setData('',event.target.id)">
+
+  </ul>  
+</div>
+

@@ -1,0 +1,155 @@
+@using MudBlazor.Utilities
+@page "/play/replace/{level}"
+
+
+<div class="page page-bg center align">
+    <h1>
+        Level @Level 
+    </h1>
+
+@if(win==0)
+{
+<div>
+<p>
+    You lose!
+</p>
+</div>
+}
+else if(win==1){
+    <p>
+        You Win!
+    </p>
+}
+<div>
+    <button @onclick="Reset" class="my-btn-secondary">
+    <img src="assets/refresh.png"/>
+    </button>
+</div>
+    <div class="d-flex flex-column mud-width-full mud-height-full align center">
+    <Button class="my-btn-primary" @onclick="Compare">CHECK ANSWER</Button>
+        <MudDropContainer T="DropItem" Items="@dropzoneItems" @ref="_container" ItemsSelector="@((item,dropzone) => item.Selector == dropzone)" ItemDropped="ItemUpdated" Class="d-flex flex-wrap flex-grow-1">
+            <ChildContent>
+                    <MudPaper Class="ma-4 flex-grow-1">
+                        <MudList Clickable="true" Class="d-flex flex-column mud-height-full">
+                            <MudListSubheader>Sample Call Numbers</MudListSubheader>
+                            <MudDropZone T="DropItem" Identifier="1" Class="flex-grow-1" AllowReorder="true" />
+                        </MudList>
+                    </MudPaper>
+                    <MudPaper Class="ma-4 flex-grow-1">
+                        <MudList Clickable="true" Class="d-flex flex-column mud-height-full">
+                            <MudListSubheader>My Answer</MudListSubheader>
+                            <MudDropZone T="DropItem" Identifier="2" Class="flex-grow-1" AllowReorder="true" />
+                        </MudList>
+                    </MudPaper>
+            </ChildContent>
+            <ItemRenderer>
+                <MudListItem Text="@($"{context.Position}. {context.CallNumber} ")" />
+            </ItemRenderer>
+        </MudDropContainer>
+    </div>
+</div>
+<div class="page page-bg" style="height:100px">
+</div>
+
+@code{
+    [Parameter]
+    //value from URI stored in property
+    public String Level { get; set; } 
+
+    private int CallListAmount()
+    {
+        switch(int.Parse(Level)){
+            case 1: return 10;
+            case 2: return 15;
+            case 3: return 20;
+            default: return 10;
+        }
+    }
+
+    // The pre-build list component form MudBlazor 
+    private MudDropContainer<DropItem> _container; 
+    private void ItemUpdated(MudItemDropInfo<DropItem> dropItem)
+    {
+        dropItem.Item.Selector = dropItem.DropzoneIdentifier;
+        //had no idea a switch case could be written inline
+        // The drop item returns from 1 a
+        var indexOffset = dropItem.DropzoneIdentifier switch {
+            "2" => data.Count(x=>x.Selector=="1"),
+            _=> 0,
+        };
+        //UpdateOrder comes from MudBlazor.Utilities
+        data.UpdateOrder(dropItem,item=>item.Position,indexOffset);
+        //do something later
+    }
+    @* private void LoadServerData()
+    {
+        List<DropItem> newdata = new List<DropItem>();
+            foreach (var item in data)
+            {
+               newdata.Add(item);
+            }
+            dropzoneItems = newdata;
+            RefreshContainer();
+    } *@
+
+    //also didn't know you can reduce method boilerplate with this lambda like expression :o 
+   private void SaveData() => data = dropzoneItems;
+
+    private int win = -1;
+    private void Compare()
+    {
+        SaveData();
+        List<String> UserAnswer =  dropzoneItems.Where(item=>item.Selector.Equals("1")).Select(x=>x.CallNumber).ToList();
+            if(rb.CompareCallNumberList(UserAnswer)){
+                win = 1;
+            }
+            else{
+                win = 0;
+            }
+    }
+
+    //List to store the Droppable Items
+    //had no idea you can create an instance with just new(); 
+    private List<DropItem> dropzoneItems = new();
+        //List to store the server data that populates the drop zones
+    private List<DropItem> data = new();
+        // List to store the callNumbers so it may be sorted and compared later 
+    private List<String> callNumbers = new();
+    private ReorderBooks rb;
+
+    // Refresh the container, method is called under Reload
+    private void RefreshContainer()
+    {
+        //update bindings to container
+        StateHasChanged();
+        _container.Refresh();
+    }
+
+
+    // generate a new List of Items on Reload and refresh the container
+    private void Reset()
+    { 
+        win = -1;
+        dropzoneItems = new();
+        data = new();
+        String callNumber = "";
+        rb = new ReorderBooks(callNumbers);
+        for (int i = 0; i < CallListAmount(); i++)
+        {
+            callNumber = rb.RandomizeCallNumber();
+            callNumbers.Add(callNumber);
+            data.Add(new DropItem(){CallNumber=callNumber,Selector="1",Position = i});
+        }
+        dropzoneItems = data;
+        RefreshContainer();
+    }
+
+    //Create a object of the droppable Item 
+    //https://mudblazor.com/components/dropzone#transfer-items-between-drop-zones-save-reorder-data
+    internal class DropItem{
+        // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/init
+        public String CallNumber { get; init; }
+        public String Selector { get; set; }
+        public int Position { get; set; }
+    }
+}
