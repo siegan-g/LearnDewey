@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yxNKTAEaXKXTB2u6AHP9QV+Mrc89A1TQQxKxTxJZFog=",
+  "Hash": "yI4O2KIhU5daxZ3DSS+MX0QCdkpPSXMw9EXhgmjQKB4=",
   "Source": "PROG7312_POE",
   "BasePath": "_content/PROG7312_POE",
   "Mode": "Default",
@@ -253,23 +253,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/giphy8.gif"
-    },
-    {
-      "Identity": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/wwwroot/assets/loading.gif",
-      "SourceId": "PROG7312_POE",
-      "SourceType": "Discovered",
-      "ContentRoot": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/wwwroot/",
-      "BasePath": "_content/PROG7312_POE",
-      "RelativePath": "assets/loading.gif",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/loading.gif"
     },
     {
       "Identity": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/wwwroot/assets/refresh.png",
