@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XnUlugxvFv0rgV46/kuReqOj/2UbBPUij5pXp6Hl3EgAeuegE1TaxssqdKGvMIybDoctTuUGpqTm7EmKEC/d9g==",
+  "dgSpecHash": "JPDLJ3gc21g3wQGNhtNEbHHYktptwYJBVBZAic3pFQimxgXP6lwkzpuwdCJ1rmPedX5hUYnWuLGeAv2jyrQ5Qw==",
   "success": true,
   "projectFilePath": "/home/jinji/Documents/BCA3/Semester_Two/PROG7312/POE/GOVENDER_SM_PROG7312_POE_FINAL/PROG7312_POE/PROG7312_POE.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "/home/jinji/.nuget/packages/mudblazor/6.0.15/mudblazor.6.0.15.nupkg.sha512",
     "/home/jinji/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
     "/home/jinji/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/home/jinji/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.11/microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+    "/home/jinji/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.12/microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512"
   ],
   "logs": []
 }
